@@ -1,0 +1,309 @@
+/* Navbar Container */
+.navbar-container {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.dark .navbar-container {
+  background-color: rgba(15, 23, 42, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.navbar-content {
+  display: flex;
+  height: 4.5rem;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Brand Logo */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: #1e293b;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.dark .navbar-brand {
+  color: #f8fafc;
+}
+
+.navbar-brand:hover {
+  opacity: 0.9;
+}
+
+.brand-icon {
+  color: #7c3aed; /* Violet Primary color */
+}
+
+.dark .brand-icon {
+  color: #a78bfa;
+}
+
+/* Desktop Navigation Menu */
+.navbar-desktop-menu {
+  display: none;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .navbar-desktop-menu {
+    display: flex;
+  }
+}
+
+/* Navigation Links */
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #64748b;
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.dark .nav-link {
+  color: #94a3b8;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: #7c3aed;
+  background-color: rgba(124, 58, 237, 0.08);
+}
+
+.dark .nav-link:hover, .dark .nav-link.active {
+  color: #a78bfa;
+  background-color: rgba(167, 139, 250, 0.08);
+}
+
+/* Primary Button Action */
+.btn-signup {
+  background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);
+  color: #ffffff;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-signup:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(124, 58, 237, 0.35);
+}
+
+/* Logout Button */
+.btn-logout {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-logout:hover {
+  background-color: #ef4444;
+  color: #ffffff;
+}
+
+/* Theme Toggle Button */
+.theme-toggler {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #475569;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dark .theme-toggler {
+  color: #fbbf24;
+  background-color: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.theme-toggler:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: rotate(15deg);
+}
+
+.dark .theme-toggler:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Mobile Controls Wrapper */
+.navbar-mobile-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .navbar-mobile-controls {
+    display: none;
+  }
+}
+
+/* Mobile Menu Toggle Button */
+.mobile-menu-toggle {
+  background: none;
+  border: none;
+  color: #475569;
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+.dark .mobile-menu-toggle {
+  color: #f8fafc;
+}
+
+/* Mobile Drawer Menu */
+.navbar-mobile-drawer {
+  position: absolute;
+  top: 4.5rem;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease-out;
+}
+
+.dark .navbar-mobile-drawer {
+  background-color: rgba(15, 23, 42, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.navbar-mobile-drawer.open {
+  max-height: 20rem;
+}
+
+.mobile-drawer-content {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  gap: 1rem;
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #475569;
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.dark .mobile-nav-link {
+  color: #cbd5e1;
+}
+
+.mobile-nav-link:hover, .mobile-nav-link.active {
+  background-color: rgba(124, 58, 237, 0.08);
+  color: #7c3aed;
+}
+
+.dark .mobile-nav-link:hover, .dark .mobile-nav-link.active {
+  background-color: rgba(167, 139, 250, 0.08);
+  color: #a78bfa;
+}
+
+.mobile-btn-signup {
+  background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);
+  color: #ffffff;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+}
+
+.mobile-btn-logout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+  cursor: pointer;
+  width: 100%;
+}
+
+.mobile-btn-logout:hover {
+  background-color: #ef4444;
+  color: #ffffff;
+}
+
+/* User Badge inside Mobile Drawer */
+.user-badge {
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  margin-bottom: 0.5rem;
+}
+
+.dark .user-badge {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.user-name {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.dark .user-name {
+  color: #f8fafc;
+}
+
+.user-email {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.dark .user-email {
+  color: #94a3b8;
+}
